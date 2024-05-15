@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\LL1">
+      <UniqueIdentifier>{81bf246d-a9c9-4cbf-a520-1d297c855bd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Grammer">
+      <UniqueIdentifier>{192d59b3-edd0-42b9-abb3-b28bfa9c74f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\LL1">
+      <UniqueIdentifier>{15be8b05-1222-4db3-b18e-c1f47fe2ceda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Grammer">
+      <UniqueIdentifier>{090b8b4b-0b3b-4318-8aa0-148fb53b14b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FA">
+      <UniqueIdentifier>{52487a48-f5d6-40ea-a1fa-7737eebb9647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FA">
+      <UniqueIdentifier>{2acc242e-6020-42ea-b740-f99ed7823c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lex">
+      <UniqueIdentifier>{8900b1ef-48ab-4f04-b66e-985a8beccb19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LEX">
+      <UniqueIdentifier>{01d5a3e2-5223-4162-8b92-b6b253d41734}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FIRST.cpp">
+      <Filter>源文件\LL1</Filter>
+    </ClCompile>
+    <ClCompile Include="FirstUtil.cpp">
+      <Filter>源文件\LL1</Filter>
+    </ClCompile>
+    <ClCompile Include="FOLLOW.cpp">
+      <Filter>源文件\LL1</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowUTIL.cpp">
+      <Filter>源文件\LL1</Filter>
+    </ClCompile>
+    <ClCompile Include="Grammar.cpp">
+      <Filter>源文件\Grammer</Filter>
+    </ClCompile>
+    <ClCompile Include="GUtil.cpp">
+      <Filter>源文件\Grammer</Filter>
+    </ClCompile>
+    <ClCompile Include="FAUtil.cpp">
+      <Filter>源文件\FA</Filter>
+    </ClCompile>
+    <ClCompile Include="RDUtil.cpp">
+      <Filter>源文件\Grammer</Filter>
+    </ClCompile>
+    <ClCompile Include="CPPUtil.cpp">
+      <Filter>源文件\Grammer</Filter>
+    </ClCompile>
+    <ClCompile Include="LEXUtil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OPGUtil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FIRST.h">
+      <Filter>头文件\LL1</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstUtil.h">
+      <Filter>头文件\LL1</Filter>
+    </ClInclude>
+    <ClInclude Include="FOLLOW.h">
+      <Filter>头文件\LL1</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowUtil.h">
+      <Filter>头文件\LL1</Filter>
+    </ClInclude>
+    <ClInclude Include="Grammar.h">
+      <Filter>头文件\Grammer</Filter>
+    </ClInclude>
+    <ClInclude Include="GUtil.h">
+      <Filter>头文件\Grammer</Filter>
+    </ClInclude>
+    <ClInclude Include="FAUtil.h">
+      <Filter>头文件\FA</Filter>
+    </ClInclude>
+    <ClInclude Include="RDUtil.h">
+      <Filter>头文件\Grammer</Filter>
+    </ClInclude>
+    <ClInclude Include="CPPUtil.h">
+      <Filter>头文件\Grammer</Filter>
+    </ClInclude>
+    <ClInclude Include="LEXUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OPGUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="function.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="input.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="..\..\CompliersPrinciples\work2\input_%27.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="labelOutPut.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="output.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="DFAInput.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="NFAInput.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="test.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="NoSimplificationDFA.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="DFAOutput.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="NFAOutput.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="Lexoutput.txt">
+      <Filter>源文件\lex</Filter>
+    </Text>
+    <Text Include="Lexinput.txt">
+      <Filter>源文件\lex</Filter>
+    </Text>
+    <Text Include="myLib.txt">
+      <Filter>源文件\lex</Filter>
+    </Text>
+    <Text Include="LL1input.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="regular.l">
+      <Filter>源文件\lex</Filter>
+    </None>
+  </ItemGroup>
+</Project>
