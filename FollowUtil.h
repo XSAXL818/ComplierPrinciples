@@ -186,7 +186,7 @@ private:
 	}
 	static set<string> getCircleDependentAndEraseCircle(set<string >& circleSet, vector<SymbolFollow>& vsfo,vector<RecordFollow>& vrfo) {
 		set<string> followSet;
-		for (int i = vrfo.size() - 1; i >= 0; i--) {
+		for (int i = (int)vrfo.size() - 1; i >= 0; i--) {
 			// 找到环内符
 			if (circleSet.find(vrfo[i].left) != circleSet.end()) {
 				if (vrfo[i].dependent == "") {// 有followSet

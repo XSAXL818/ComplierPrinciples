@@ -46,7 +46,7 @@ vector<SymbolFollow> FollowUtil::getFollow(vector<Production>& vp, vector<Symbol
 	while (!vrfo.empty()) {
 		// 第一步,删除可直接求出Follow的非终结符，并将入到vsfo
 		vector<SymbolFollow> ret = moveNoDependent(vrfo);
-		int start = vsfo.size();// 标记已求出FOLLOW的非终结符，及其所在vsfo中的位置
+		int start = (int)vsfo.size();// 标记已求出FOLLOW的非终结符，及其所在vsfo中的位置
 		for (int i = 0; i < ret.size(); i++) {
 			sig[ret[i].left] = start + i;
 		}
@@ -243,7 +243,7 @@ void FollowUtil::eraseRepeatFollow(vector<RecordFollow>& vrfo) {
 void FollowUtil::getFollowFromProduction(vector<RecordFollow>& vrfo, vector<SymbolFirst>& vsf, string left, string pro) {
 	// 将产生式转为终结符和非终结符的数组
 	vector<string> rights = getRightsFromPro(pro);
-	int i = rights.size() - 2;// 循环从 size-2开始
+	int i = (int)rights.size() - 2;// 循环从 size-2开始
 	int j = i + 1;// 最后一个字符
 	bool allNull = true;// 记录 Yi+1 到 Yn-1 全都可以推出虚产生式,用于结论1
 	// 非终结符 Y 有空产生式意味着 FIRST[Y]集合中有 空@

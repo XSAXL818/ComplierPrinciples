@@ -161,7 +161,7 @@ void PUTIL::readGrammar(vector< Grammar >& grammars, string fileName) {
 			str.erase(--str.end());
 		}
 		string left = "";
-		int pos = str.find("::=");
+		int pos = (int)str.find("::=");
 		// 获取左边,可获取E' 
 		if (pos == -1) { // 说明是新的文法
 			if (!productions.empty()) {
@@ -438,15 +438,15 @@ void PUTIL::eraseRepeatLeft(Production& p) {
 			erase = true;
 		}
 		else {
-			int len = p.left.size();
-			int first = p.right[i].find(p.left);// 相邻两个 left的第一个 
+			int len = (int)p.left.size();
+			int first = (int)p.right[i].find(p.left);// 相邻两个 left的第一个 
 			int second;// 第二个 
 			while (1) {
 				if (first + len == p.right[i].size()) {// 字符串遍历完了，不存在第二个了，说明右部为 left重复，该项删除 
 					erase = true;
 					break;
 				}
-				second = p.right[i].find(p.left, first + len);//第二个的位置
+				second = (int)p.right[i].find(p.left, first + len);//第二个的位置
 				if (second == -1) {// 第二个没找到,即不存在重复定义left， 该项不删除 
 					break;
 				}
@@ -468,11 +468,11 @@ void PUTIL::eraseRepeatLeft(Production& p) {
 // 利用已有的left去替换right中的left 
 bool PUTIL::swapLeftToRright(string& right, string& left, string& leftProduction) {
 	bool isSwap = false;
-	int pos = right.find(left);
+	int pos = (int)right.find(left);
 	while (pos != -1) {
 		right.erase(pos, left.size());
 		right.insert(pos, leftProduction);
-		pos = right.find(left, pos + left.size());
+		pos = (int)right.find(left, pos + left.size());
 		isSwap = true;
 	}
 	return isSwap;
@@ -691,7 +691,7 @@ void PUTIL::print(vector<Production>& vp, map<string, bool>& vis) {
 /// <param name="table"></param>
 void PUTIL::printTable(vector<Production>& vp, vector< vector<int> >& table) {
 	cout << "\t";
-	int len = vp.size();
+	int len = (int)vp.size();
 	for (int i = 0; i < len; i++) {
 		cout << vp[i].left << "\t";
 	}
@@ -771,7 +771,7 @@ void PUTIL::topToBottom(string src, map<LL1Key,string>& LL1, vector<Production>&
 			}
 			// 将产生式加入栈
 			vector<string> rights = getRightsFromPro(pro);
-			for (int i = rights.size() - 1; i >= 0; i--) {
+			for (int i = (int)rights.size() - 1; i >= 0; i--) {
 				s.push(rights[i]);
 			}
 			// 打印中间信息
@@ -837,7 +837,7 @@ void PUTIL::topToBottomNoProcess(string src, map<LL1Key, string>& LL1, vector<Pr
 			}
 			// 将产生式加入栈
 			vector<string> rights = getRightsFromPro(pro);
-			for (int i = rights.size() - 1; i >= 0; i--) {
+			for (int i = (int)rights.size() - 1; i >= 0; i--) {
 				s.push(rights[i]);
 			}
 		}
@@ -915,7 +915,7 @@ int PUTIL::findLeftIndexInLL1(string left, vector<Production>& vp) {
 			return i;
 		}
 	}
-	return vp.size();
+	return (int)vp.size();
 }
 /// <summary>
 /// 查询非终结符在SymbolFirst的位置
@@ -1207,7 +1207,7 @@ void PUTIL::EliminateDirectLeftRecursion(vector<Production>& vp, int pos) {
 			newPro.right.push_back(pro) ;
 			it++;
 		}
-		int size = range - begin;
+		int size = (int)(range - begin);
 		while (size--) {// 删除源非终结符的左递归产生式
 			vp[pos].right.erase(vp[pos].right.begin());
 		}

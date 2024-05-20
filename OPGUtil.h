@@ -432,7 +432,7 @@ private:
 		}
 	}
 	static void printFirstTerm(vector<FirstTerm>& vft) {
-		cout << "symbol\FirstTermSet" << endl;
+		cout << "symbol\tFirstTermSet" << endl;
 		for (int i = 0; i < vft.size(); i++) {
 			cout << vft[i].left << "\t";
 			for (set<string>::iterator it = vft[i].firstSet.begin(); it != vft[i].firstSet.end(); it++) {
