@@ -725,6 +725,12 @@ bool PUTIL::isNon(string str) {
 	}
 	return false;
 }
+bool PUTIL::isNon(char c) {
+	if (c >= 'A' && c <= 'Z') {
+		return true;
+	}
+	return false;
+}
 /// <summary>
 /// 自顶向下分析
 /// </summary>

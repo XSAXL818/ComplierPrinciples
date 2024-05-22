@@ -55,6 +55,7 @@ public:
 	/// <param name="str"></param>
 	/// <returns></returns>
 	static bool isNon(string str);
+	static bool isNon(char c);
 	/// <summary>
 	/// 自顶向下分析
 	/// </summary>

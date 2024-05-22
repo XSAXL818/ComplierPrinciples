@@ -1,4 +1,5 @@
 #include<iostream>
+#include <Windows.h>
 #include<vector>
 #include<algorithm>
 #include<set> 
@@ -7,6 +8,7 @@
 #include<queue>
 #include<string>
 #include <cstdlib>
+#include <filesystem>
 #include"Grammar.h"
 #include"GUtil.h"
 #include"UI.h"
@@ -30,6 +32,10 @@ void f7(GrammarPlus& g);
 //int funcID = 5;
 
 int main() {
+	/*bool b1 = true;
+	bool b2 = true;
+	cout << b1 + b2 << endl;*/
+
 	vector<Grammar > grammars;
 	vector< string > func;
 	vector<NFA> nfas;
@@ -362,56 +368,68 @@ void f6(Grammar& grammar) {
 	map<pair<char, char>, char> table = OPGUtil::getTable(grammar,first,last);
 	map<pair<char, char>, char> noTable = OPGUtil::getTableNo(grammar, first, last);
 	cout << "算符优先矩阵：\n";
-	for (char c1 : grammar.terms) {
-		cout << "\t" << c1;
-	}
-	cout << endl;
-	for (char c1 : grammar.terms) {
-		cout << c1 << "\t";
-		for (char c2 : grammar.terms) {
-			pair<char, char> p = { c1,c2 };
-			if (table.find(p) != table.end() ) {
-				cout << table[p] << "\t";
-			}
-			else {
-				cout << "\t";
-			}
-		}
-		cout << endl;
-	}
+	OPGUtil::printOPGTable(grammar, table);
 	grammar.terms.erase('#');
 	cout << "----------------求解算符优先表中------------------" << endl;
 	static map<pair<char, char>, int> fgTable = OPGUtil::getFGTable(noTable, grammar);
 	cout << endl<<  "优先函数表如下:" << endl;
 	OPGUtil::printFGTable(grammar, fgTable);
+	grammar.terms.insert('#');
+	map<string, char> proToLeftTable = OPGUtil::getProToLeftTable(grammar);
+	while (1) {
+		string juzi;
+		cout << "请选择功能：1、识别句子\t2、Warshall算法求解\t3、退出\n";
+		string op;
+		cin >> op;
+		if (op == "1") {
+			cout << "算符优先矩阵：\n";
+			OPGUtil::printOPGTable(grammar, table);
+			grammar.terms.insert('#');
+			cout << "请输入一个句子：(输入#退出)\n";
+			cin >> juzi;
+			if (juzi == "#") {
+				break;
+			}
+			if (OPGUtil::isSentence(grammar.start, juzi, table, proToLeftTable) == ISSENTENCE) {
+				cout << "这是个句子\n";
+				system("\"D:\\Code\\CCode\\VS\\QtProject\\OPG\\x64\\Debug\\OPG.exe\"");
+			}
+			else {
+				cout << "这不是个句子\n";
+				system("\"D:\\Code\\CCode\\VS\\QtProject\\OPG\\x64\\Debug\\OPG.exe\"");
+			}
+		}
+		else if (op == "2") {
+			grammar.terms.erase('#');
+			cout << "算符优先矩阵：\n";
+			OPGUtil::printOPGTable(grammar, noTable);
+			OPGUtil::warShall(noTable,grammar);
+		}
+		else {
+			break;
+		}
+		
+	}
+	/*while (1) {
+		cout << "算符优先矩阵：\n";
+		OPGUtil::printOPGTable(grammar, table);
+		string juzi;
+		cout << "请输入一个句子：(输入#退出)\n";
+		cin >> juzi;
+		if (juzi == "#") {
+			break;
+		}
+		else {
+			if (OPGUtil::isJuzi(grammar.start,juzi, table)) {
+				cout << "这是个句子\n";
+			}
+			else {
+				cout << "这不是个句子\n";
+			}
+		}
+	}*/
 }
 
 void f7(GrammarPlus& gp) {
 	
 }
-//void f7(GrammarPlus& gp) {
-//	cout << "可输入的单词及终结符表{";
-//	vector<string> terms;
-//	for (string s : gp.terms) {
-//		terms.push_back(s);
-//	}
-//	cout << "}\n";
-//	terms.push_back("$");
-//	map<LL1Key, string> LL1Table = PUTIL::getLL1Table(gp.productions, terms);
-//	cout << "LL1语法分析表如下：" << endl;
-//	for (int i = 0; i < terms.size(); i++) {
-//		cout << "\t" << terms[i];
-//	}
-//	cout << endl;
-//	PUTIL::printLL1Table(LL1Table, gp.productions, terms);
-//	string juzi;
-//	while (1) {
-//		getchar();
-//		cout << "请输入待推导的的句子：(输入@退出)" << endl;
-//		getline(cin, juzi);
-//		if (juzi == "@") {
-//			break;
-//		}
-//		PUTIL::topToBottom(juzi, LL1Table, gp.productions, terms);
-//	}
-//}

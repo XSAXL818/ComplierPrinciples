@@ -193,6 +193,9 @@ public:
 		FILE* fp;
 		fopen_s(&fp, "myLib.txt", "r");
 		char str[200];
+		if (fp == NULL) {
+			return;
+		}
 		while (fgets(str, sizeof(str), fp)) {
 			string t = str;
 			statement += t;

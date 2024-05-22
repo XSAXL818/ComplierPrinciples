@@ -34,8 +34,14 @@
     <Filter Include="源文件\lex">
       <UniqueIdentifier>{8900b1ef-48ab-4f04-b66e-985a8beccb19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\LEX">
-      <UniqueIdentifier>{01d5a3e2-5223-4162-8b92-b6b253d41734}</UniqueIdentifier>
+    <Filter Include="头文件\Lex">
+      <UniqueIdentifier>{bcdbe5b0-6ba2-46fd-a46f-3bc817f6e2a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\OPG">
+      <UniqueIdentifier>{552aa2a8-c421-436d-86ef-14fa511c79f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\OPG">
+      <UniqueIdentifier>{01fec788-92f0-4e28-8d36-753023dd6980}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +79,10 @@
       <Filter>源文件\Grammer</Filter>
     </ClCompile>
     <ClCompile Include="LEXUtil.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\lex</Filter>
     </ClCompile>
     <ClCompile Include="OPGUtil.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\OPG</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,10 +117,10 @@
       <Filter>头文件\Grammer</Filter>
     </ClInclude>
     <ClInclude Include="LEXUtil.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Lex</Filter>
     </ClInclude>
     <ClInclude Include="OPGUtil.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\OPG</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
